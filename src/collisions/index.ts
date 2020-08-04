@@ -1,3 +1,3 @@
-import hitTest from "./point_line";
+import hitTest from "./line_circle";
 
 export { hitTest };

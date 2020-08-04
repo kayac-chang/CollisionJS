@@ -51,7 +51,7 @@ function main({ canvas }: Context) {
   return function (delta: number) {
     pointer.position = getPosition();
 
-    test.style = hitTest(pointer.position, test) ? "#ff8080" : "#0099b0";
+    test.style = hitTest(test, pointer) ? "#ff8080" : "#0099b0";
 
     return [background, test, pointer] as IElement[];
   };

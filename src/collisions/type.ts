@@ -9,3 +9,8 @@ export interface Rect {
   position: Vec2;
   size: Vec2;
 }
+
+export interface Line {
+  start: Vec2;
+  end: Vec2;
+}
