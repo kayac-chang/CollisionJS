@@ -1,21 +1,26 @@
 import "./index.scss";
+import { Game, Setting, IElement } from "./core";
 
-function draw(ctx: CanvasRenderingContext2D, width: number, height: number) {
-  ctx.fillStyle = "#ffffff";
-  ctx.fillRect(0, 0, width, height);
+function main({ width, height }: Setting) {
+  const rect = {
+    type: "rect",
+    style: "#ffffff",
+    position: { x: 0, y: 0 },
+    size: { x: width, y: height },
+  };
+
+  const circle = {
+    type: "circle",
+    style: "#ff8080",
+    position: { x: 250, y: 250 },
+    radius: 50,
+  };
+
+  return function (delta: number) {
+    circle.position.x += 50 * delta;
+
+    return [rect, circle] as IElement[];
+  };
 }
 
-function main() {
-  const canvas = document.createElement("canvas");
-
-  document.body.append(canvas);
-
-  const ctx = canvas.getContext("2d");
-  if (!ctx) {
-    throw `Your browser not support canvas api..`;
-  }
-
-  draw(ctx, canvas.clientWidth, canvas.clientHeight);
-}
-
-main();
+Game(main);
