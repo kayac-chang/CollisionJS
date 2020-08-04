@@ -16,3 +16,7 @@ export function points({ position, size }: Rect) {
 export function clamp([x, y]: Vec2, num: number) {
   return inRange([x, y])(num) ? num : num > x ? y : x;
 }
+
+export function distance([x, y]: Vec2) {
+  return Math.sqrt(x * x + y * y);
+}

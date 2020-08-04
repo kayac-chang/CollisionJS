@@ -6,11 +6,14 @@
  */
 
 import { Vec2, Rect } from "./type";
-import { inRange } from "./utils";
+import { inRange, points } from "./utils";
 
 export default function hitTest([px, py]: Vec2, o2: Rect) {
-  const [x, y] = o2.position;
-  const [w, h] = o2.size;
+  const [r1, r2, r3, r4] = points(o2);
 
-  return inRange([x, x + w])(px) && inRange([y, y + h])(py);
+  return [
+    //
+    inRange([r1, r2])(px),
+    inRange([r3, r4])(py),
+  ].every(Boolean);
 }

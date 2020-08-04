@@ -3,6 +3,7 @@
  */
 
 import { Circle } from "./type";
+import { distance } from "./utils";
 
 export default function hitTest(o1: Circle, o2: Circle) {
   const [x1, y1] = o1.position;
@@ -13,5 +14,5 @@ export default function hitTest(o1: Circle, o2: Circle) {
   const dx = x1 - x2;
   const dy = y1 - y2;
 
-  return Math.sqrt(dx * dx + dy * dy) <= r1 + r2;
+  return distance([dx, dy]) <= r1 + r2;
 }

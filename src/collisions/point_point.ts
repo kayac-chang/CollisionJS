@@ -3,12 +3,11 @@
  */
 
 import { Vec2 } from "./type";
-import _hitTest from "./circle_circle";
 
-function Buffer(position: Vec2, radius: number = 1) {
-  return { position, radius };
-}
-
-export default function hitTest(o1: Vec2, o2: Vec2) {
-  return _hitTest(Buffer(o1), Buffer(o2));
+export default function hitTest([x1, y1]: Vec2, [x2, y2]: Vec2) {
+  return [
+    //
+    x1 - x2,
+    y1 - y2,
+  ].every((num) => Math.abs(num) < 1);
 }
