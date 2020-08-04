@@ -1,26 +1,30 @@
 import "./index.scss";
-import { Game, Setting, IElement } from "./core";
+import { Game, IElement, Context } from "./core";
+import { PointerSystem } from "./systems";
 
-function main({ width, height }: Setting) {
+function main({ canvas }: Context) {
   const rect = {
     type: "rect",
     style: "#ffffff",
     position: { x: 0, y: 0 },
-    size: { x: width, y: height },
+    size: { x: canvas.width, y: canvas.height },
   };
 
   const circle = {
     type: "circle",
     style: "#ff8080",
-    position: { x: 250, y: 250 },
+    position: { x: 0, y: 0 },
     radius: 50,
   };
 
+  const getPosition = PointerSystem(canvas);
+
   return function (delta: number) {
-    circle.position.x += 50 * delta;
+    circle.position = getPosition();
+    // circle.position.x += 50 * delta;
 
     return [rect, circle] as IElement[];
   };
 }
 
-Game(main);
+Game(document.getElementById("root") as HTMLCanvasElement, main);

@@ -7,17 +7,12 @@ export interface Vec2 {
   y: number;
 }
 
-export interface Setting {
-  width: number;
-  height: number;
-}
-
 export interface UpdateFn {
   (delta: number): IElement[];
 }
 
 export interface InitFn {
-  (setting: Setting): UpdateFn;
+  (ctx: Context): UpdateFn;
 }
 
 export * from "./elements";
