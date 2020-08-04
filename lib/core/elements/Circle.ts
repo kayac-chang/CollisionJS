@@ -6,7 +6,11 @@ export default function Circle(
   { style, position, radius }: ICircle
 ) {
   ctx.fillStyle = style;
+
   ctx.beginPath();
-  ctx.arc(position.x, position.y, radius, 0, 2 * Math.PI);
+
+  const [x, y] = position;
+  ctx.arc(x, y, radius, 0, 2 * Math.PI);
+
   ctx.fill();
 }
