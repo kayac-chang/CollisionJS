@@ -10,6 +10,7 @@ import {
 } from "../lib/core";
 import { PointerSystem } from "../lib/systems";
 import { hitTest } from "./collisions";
+import { add } from "../lib/vec2";
 
 function main({ canvas }: Context) {
   const background = {
@@ -58,12 +59,12 @@ function main({ canvas }: Context) {
   //   radius: 10,
   // };
 
-  const pointer: ILine = {
-    type: "line",
-    style: "#888",
-    start: [0, 0],
-    end: [0, 0],
-  };
+  // const pointer: ILine = {
+  //   type: "line",
+  //   style: "#888",
+  //   start: [0, 0],
+  //   end: [0, 0],
+  // };
 
   // const pointer: IRect = {
   //   type: "rect",
@@ -72,14 +73,28 @@ function main({ canvas }: Context) {
   //   size: [50, 50],
   // };
 
+  const pointer: IPolygon = {
+    type: "polygon",
+    style: "#888",
+    path: [
+      [0, 0],
+      [100, 100],
+      [-100, 100],
+    ],
+  };
+
   const getPosition = PointerSystem(canvas);
 
   return function (delta: number) {
-    pointer.end = getPosition();
+    const clone = { ...pointer };
 
-    test.style = hitTest(test, pointer) ? "#ff8080" : "#0099b0";
+    const pos = getPosition();
 
-    return [background, test, pointer] as IElement[];
+    clone.path = clone.path.map((v) => add(v, pos));
+
+    test.style = hitTest(test, clone) ? "#ff8080" : "#0099b0";
+
+    return [background, test, clone] as IElement[];
   };
 }
 
