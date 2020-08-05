@@ -58,24 +58,24 @@ function main({ canvas }: Context) {
   //   radius: 10,
   // };
 
-  // const pointer: ILine = {
-  //   type: "line",
-  //   style: "#888",
-  //   start: [0, 0],
-  //   end: [0, 0],
-  // };
-
-  const pointer: IRect = {
-    type: "rect",
+  const pointer: ILine = {
+    type: "line",
     style: "#888",
-    position: [0, 0],
-    size: [50, 50],
+    start: [0, 0],
+    end: [0, 0],
   };
+
+  // const pointer: IRect = {
+  //   type: "rect",
+  //   style: "#888",
+  //   position: [0, 0],
+  //   size: [50, 50],
+  // };
 
   const getPosition = PointerSystem(canvas);
 
   return function (delta: number) {
-    pointer.position = getPosition();
+    pointer.end = getPosition();
 
     test.style = hitTest(test, pointer) ? "#ff8080" : "#0099b0";
 

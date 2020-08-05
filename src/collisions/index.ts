@@ -1,3 +1,3 @@
-import hitTest from "./polygon_rect";
+import hitTest from "./polygon_line";
 
 export { hitTest };

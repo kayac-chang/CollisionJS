@@ -7,6 +7,10 @@ export default function hitTest({ path }: Polygon, circle: Circle) {
   let hit = false;
 
   forEachPath(path, (start, end) => {
+    if (hit) {
+      return;
+    }
+
     if (hitLine({ start, end }, circle)) {
       hit = true;
     }
