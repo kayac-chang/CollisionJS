@@ -51,12 +51,12 @@ function main({ canvas }: Context) {
     ],
   };
 
-  const pointer: ICircle = {
-    type: "circle",
-    style: "#888",
-    position: [0, 0],
-    radius: 10,
-  };
+  // const pointer: ICircle = {
+  //   type: "circle",
+  //   style: "#888",
+  //   position: [0, 0],
+  //   radius: 10,
+  // };
 
   // const pointer: ILine = {
   //   type: "line",
@@ -65,12 +65,12 @@ function main({ canvas }: Context) {
   //   end: [0, 0],
   // };
 
-  // const pointer: IRect = {
-  //   type: "rect",
-  //   style: "#888",
-  //   position: [0, 0],
-  //   size: [50, 50],
-  // };
+  const pointer: IRect = {
+    type: "rect",
+    style: "#888",
+    position: [0, 0],
+    size: [50, 50],
+  };
 
   const getPosition = PointerSystem(canvas);
 
