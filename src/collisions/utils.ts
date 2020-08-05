@@ -17,3 +17,14 @@ export function points({ position, size }: Rect) {
 export function clamp([x, y]: Vec2, num: number) {
   return inRange([x, y])(num) ? num : num > x ? y : x;
 }
+
+export function forEachPath(
+  path: Vec2[],
+  func: (cur: Vec2, next: Vec2) => void
+) {
+  path.forEach((cur, index) => {
+    const next = path[(index + 1) % path.length];
+
+    func(cur, next);
+  });
+}

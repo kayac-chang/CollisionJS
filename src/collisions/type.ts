@@ -19,3 +19,7 @@ export interface Ray {
   start: Vec2;
   dir: Vec2;
 }
+
+export interface Polygon {
+  path: Vec2[];
+}

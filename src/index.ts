@@ -1,5 +1,13 @@
 import "./index.scss";
-import { Game, IElement, Context, IRect, ILine, IPolygon } from "../lib/core";
+import {
+  Game,
+  IElement,
+  Context,
+  IRect,
+  ILine,
+  IPolygon,
+  ICircle,
+} from "../lib/core";
 import { PointerSystem } from "../lib/systems";
 import { hitTest } from "./collisions";
 
@@ -43,19 +51,19 @@ function main({ canvas }: Context) {
     ],
   };
 
-  // const pointer: ICircle = {
-  //   type: "circle",
-  //   style: "#888",
-  //   position: [0, 0],
-  //   radius: 10,
-  // };
-
-  const pointer: ILine = {
-    type: "line",
+  const pointer: ICircle = {
+    type: "circle",
     style: "#888",
-    start: [0, 0],
-    end: [0, 0],
+    position: [0, 0],
+    radius: 10,
   };
+
+  // const pointer: ILine = {
+  //   type: "line",
+  //   style: "#888",
+  //   start: [0, 0],
+  //   end: [0, 0],
+  // };
 
   // const pointer: IRect = {
   //   type: "rect",
@@ -67,9 +75,9 @@ function main({ canvas }: Context) {
   const getPosition = PointerSystem(canvas);
 
   return function (delta: number) {
-    pointer.end = getPosition();
+    pointer.position = getPosition();
 
-    test.style = hitTest(test, pointer.end) ? "#ff8080" : "#0099b0";
+    test.style = hitTest(test, pointer) ? "#ff8080" : "#0099b0";
 
     return [background, test, pointer] as IElement[];
   };
