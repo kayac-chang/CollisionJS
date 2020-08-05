@@ -1,3 +1,3 @@
-import hitTest from "./ray_line";
+import hitTest from "./line_rect";
 
 export { hitTest };

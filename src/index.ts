@@ -19,19 +19,19 @@ function main({ canvas }: Context) {
   //   radius: 10,
   // };
 
-  // const test: IRect = {
-  //   type: "rect",
-  //   style: "#0099b0",
-  //   position: [250, 250],
-  //   size: [100, 100],
-  // };
-
-  const test: ILine = {
-    type: "line",
+  const test: IRect = {
+    type: "rect",
     style: "#0099b0",
-    start: [250, 250],
-    end: [600, 250],
+    position: [250, 250],
+    size: [100, 100],
   };
+
+  // const test: ILine = {
+  //   type: "line",
+  //   style: "#0099b0",
+  //   start: [400, 250],
+  //   end: [250, 400],
+  // };
 
   // const pointer: ICircle = {
   //   type: "circle",
@@ -59,11 +59,7 @@ function main({ canvas }: Context) {
   return function (delta: number) {
     pointer.end = getPosition();
 
-    const dir = normalize(sub(pointer.start, pointer.end));
-
-    test.style = hitTest(test, { start: pointer.start, dir })
-      ? "#ff8080"
-      : "#0099b0";
+    test.style = hitTest(pointer, test) ? "#ff8080" : "#0099b0";
 
     return [background, test, pointer] as IElement[];
   };
