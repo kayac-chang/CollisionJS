@@ -1,5 +1,5 @@
 import { Rect } from "./type";
-import { Vec2, det, sub } from "../../lib/vec2";
+import { Vec2, det, sub } from "../lib/vec2";
 
 export function inRange([x, y]: Vec2) {
   const [min, max] = [Math.min(x, y), Math.max(x, y)];

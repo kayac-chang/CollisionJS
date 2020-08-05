@@ -1,6 +1,6 @@
 import { Line, Rect } from "./type";
 import _hit from "./line_line";
-import { Vec2 } from "../../lib/vec2";
+import { Vec2 } from "../lib/vec2";
 
 export default function hitTest(o1: Line, o2: Rect) {
   const [x, y] = o2.position;

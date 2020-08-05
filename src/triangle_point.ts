@@ -1,4 +1,4 @@
-import { Vec2 } from "../../lib/vec2";
+import { Vec2 } from "../lib/vec2";
 import { triangleArea, sum } from "./utils";
 import { Triangle } from "./type";
 

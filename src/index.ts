@@ -1,98 +1,62 @@
-import "./index.scss";
-import {
-  Game,
-  IElement,
-  Context,
-  IRect,
-  ILine,
-  IPolygon,
-  ICircle,
-  ITriangle,
-} from "../lib/core";
-import { PointerSystem } from "../lib/systems";
-import { hitTest } from "./collisions";
-import { add } from "../lib/vec2";
+import circle_circle from "./circle_circle";
+import circle_rect from "./circle_rect";
 
-function main({ canvas }: Context) {
-  const background = {
-    type: "rect",
-    style: "#ffffff",
-    position: [0, 0],
-    size: [canvas.width, canvas.height],
-  };
+import line_circle from "./line_circle";
+import line_line from "./line_line";
+import line_rect from "./line_rect";
 
-  // const test: ICircle = {
-  //   type: "circle",
-  //   style: "#0099b0",
-  //   position: [250, 250],
-  //   radius: 10,
-  // };
+import point_circle from "./point_circle";
+import point_line from "./point_line";
+import point_point from "./point_point";
+import point_rect from "./point_rect";
 
-  // const test: IRect = {
-  //   type: "rect",
-  //   style: "#0099b0",
-  //   position: [250, 250],
-  //   size: [100, 100],
-  // };
+import polygon_circle from "./polygon_circle";
+import polygon_line from "./polygon_line";
+import polygon_point from "./polygon_point";
+import polygon_polygon from "./polygon_polygon";
+import polygon_rect from "./polygon_rect";
 
-  // const test: ILine = {
-  //   type: "line",
-  //   style: "#0099b0",
-  //   start: [400, 250],
-  //   end: [250, 400],
-  // };
+import ray_line from "./ray_line";
+import rect_rect from "./rect_rect";
+import triangle_point from "./triangle_point";
 
-  const test: ITriangle = {
-    type: "polygon",
-    style: "#0099b0",
-    path: [
-      [250, 250],
-      [450, 250],
-      [650, 550],
-    ],
-  };
+export * from "./type";
 
-  // const pointer: ICircle = {
-  //   type: "circle",
-  //   style: "#888",
-  //   position: [0, 0],
-  //   radius: 10,
-  // };
-
-  // const pointer: ILine = {
-  //   type: "line",
-  //   style: "#888",
-  //   start: [0, 0],
-  //   end: [0, 0],
-  // };
-
-  // const pointer: IRect = {
-  //   type: "rect",
-  //   style: "#888",
-  //   position: [0, 0],
-  //   size: [50, 50],
-  // };
-
-  // const pointer: IPolygon = {
-  //   type: "polygon",
-  //   style: "#888",
-  //   path: [
-  //     [0, 0],
-  //     [100, 100],
-  //     [-100, 100],
-  //   ],
-  // };
-
-  const getPosition = PointerSystem(canvas);
-
-  return function (delta: number) {
-    const pos = getPosition();
-
-    test.style = hitTest(test, pos) ? "#ff8080" : "#0099b0";
-
-    return [background, test] as IElement[];
-  };
-}
-
-const view = document.getElementById("root") as HTMLCanvasElement;
-Game(view, main);
+export {
+  circle_circle,
+  circle_rect,
+  line_circle,
+  line_line,
+  line_rect,
+  point_circle,
+  point_line,
+  point_point,
+  point_rect,
+  polygon_circle,
+  polygon_line,
+  polygon_point,
+  polygon_polygon,
+  polygon_rect,
+  ray_line,
+  rect_rect,
+  triangle_point,
+};
+export default {
+  circle_circle,
+  circle_rect,
+  line_circle,
+  line_line,
+  line_rect,
+  point_circle,
+  point_line,
+  point_point,
+  point_rect,
+  polygon_circle,
+  polygon_line,
+  polygon_point,
+  polygon_polygon,
+  polygon_rect,
+  ray_line,
+  rect_rect,
+  triangle_point,
+};

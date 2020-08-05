@@ -9,6 +9,6 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel example/index.html"
   }
 }

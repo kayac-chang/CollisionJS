@@ -1,4 +1,4 @@
-import { Vec2 } from "../../lib/vec2";
+import { Vec2 } from "../lib/vec2";
 import { forEachPath } from "./utils";
 import { Polygon } from "./type";
 

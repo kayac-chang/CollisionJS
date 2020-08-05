@@ -7,7 +7,7 @@
 
 import { Rect } from "./type";
 import { inRange, points } from "./utils";
-import { Vec2 } from "../../lib/vec2";
+import { Vec2 } from "../lib/vec2";
 
 export default function hitTest([px, py]: Vec2, o2: Rect) {
   const [r1, r2, r3, r4] = points(o2);

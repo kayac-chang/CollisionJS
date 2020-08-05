@@ -3,7 +3,7 @@
  */
 
 import { Circle } from "./type";
-import { mag, Vec2 } from "../../lib/vec2";
+import { mag, Vec2 } from "../lib/vec2";
 
 export default function hitTest([x1, y1]: Vec2, circle: Circle) {
   const [x2, y2] = circle.position;

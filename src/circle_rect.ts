@@ -7,7 +7,7 @@
 
 import { Rect, Circle } from "./type";
 import { points, clamp } from "./utils";
-import { mag } from "../../lib/vec2";
+import { mag } from "../lib/vec2";
 
 export default function hitTest(o1: Circle, o2: Rect) {
   const [r1, r2, r3, r4] = points(o2);
