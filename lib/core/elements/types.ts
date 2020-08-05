@@ -39,3 +39,7 @@ export interface IPolygon {
   style: string;
   path: Vec2[];
 }
+
+export interface ITriangle extends IPolygon {
+  path: [Vec2, Vec2, Vec2];
+}

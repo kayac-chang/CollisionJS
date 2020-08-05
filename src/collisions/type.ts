@@ -23,3 +23,7 @@ export interface Ray {
 export interface Polygon {
   path: Vec2[];
 }
+
+export interface Triangle {
+  path: [Vec2, Vec2, Vec2];
+}
