@@ -1,4 +1,4 @@
-export type Vec2 = [number, number];
+import { Vec2 } from "../../lib/vec2";
 
 export interface Circle {
   position: Vec2;

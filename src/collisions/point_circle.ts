@@ -2,8 +2,8 @@
  * Check if a point is inside a circle.
  */
 
-import { Vec2, Circle } from "./type";
-import { magnitude } from "./utils";
+import { Circle } from "./type";
+import { mag, Vec2 } from "../../lib/vec2";
 
 export default function hitTest([x1, y1]: Vec2, circle: Circle) {
   const [x2, y2] = circle.position;
@@ -12,5 +12,5 @@ export default function hitTest([x1, y1]: Vec2, circle: Circle) {
   const dx = x1 - x2;
   const dy = y1 - y2;
 
-  return magnitude([dx, dy]) <= r;
+  return mag([dx, dy]) <= r;
 }

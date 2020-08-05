@@ -1,5 +1,6 @@
 import { Line, Ray } from "./type";
-import { sub, det, add, inRange } from "./utils";
+import { inRange } from "./utils";
+import { sub, det, add } from "../../lib/vec2";
 
 export default function hitTest(o1: Line, o2: Ray) {
   const l1 = sub(o1.start, o1.end);

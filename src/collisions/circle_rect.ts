@@ -6,7 +6,8 @@
  */
 
 import { Rect, Circle } from "./type";
-import { points, clamp, distance } from "./utils";
+import { points, clamp } from "./utils";
+import { mag } from "../../lib/vec2";
 
 export default function hitTest(o1: Circle, o2: Rect) {
   const [r1, r2, r3, r4] = points(o2);
@@ -19,5 +20,5 @@ export default function hitTest(o1: Circle, o2: Rect) {
     cy - clamp([r3, r4], cy),
   ];
 
-  return distance([dx, dy]) <= r;
+  return mag([dx, dy]) <= r;
 }

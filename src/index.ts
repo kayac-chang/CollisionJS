@@ -1,8 +1,7 @@
 import "./index.scss";
-import { Game, IElement, Context, ICircle, IRect, ILine } from "../lib/core";
+import { Game, IElement, Context, IRect, ILine } from "../lib/core";
 import { PointerSystem } from "../lib/systems";
 import { hitTest } from "./collisions";
-import { sub, normalize } from "./collisions/utils";
 
 function main({ canvas }: Context) {
   const background = {
