@@ -6,6 +6,8 @@ import {
   IElement,
   Line,
   ILine,
+  Polygon,
+  IPolygon,
 } from "../elements";
 import { Context, UpdateFn } from "../types";
 
@@ -21,6 +23,10 @@ function Renderer(ctx: Context) {
 
     if (element.type === "line") {
       return Line(ctx, element as ILine);
+    }
+
+    if (element.type === "polygon") {
+      return Polygon(ctx, element as IPolygon);
     }
   };
 }

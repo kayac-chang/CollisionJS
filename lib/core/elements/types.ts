@@ -1,6 +1,6 @@
 import { Vec2 } from "../../vec2";
 
-type ElementType = "rect" | "circle" | "line" | "text";
+type ElementType = "rect" | "circle" | "line" | "text" | "polygon";
 
 export interface IElement {
   type: ElementType;
@@ -32,4 +32,10 @@ export interface IText extends IElement {
   style: string;
   msg: string;
   position: Vec2;
+}
+
+export interface IPolygon {
+  type: "polygon";
+  style: string;
+  path: Vec2[];
 }
