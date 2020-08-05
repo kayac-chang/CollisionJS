@@ -44,3 +44,10 @@ export function add([x1, y1]: Vec2, [x2, y2]: Vec2): Vec2 {
 export function sub([x1, y1]: Vec2, [x2, y2]: Vec2): Vec2 {
   return [x1 - x2, y1 - y2];
 }
+
+export function det([top, down]: [Vec2, Vec2]) {
+  const [a, b] = top;
+  const [c, d] = down;
+
+  return a * d - b * c;
+}

@@ -14,3 +14,8 @@ export interface Line {
   start: Vec2;
   end: Vec2;
 }
+
+export interface Ray {
+  start: Vec2;
+  dir: Vec2;
+}

@@ -1,4 +1,4 @@
-import { Line, Circle, Vec2 } from "./type";
+import { Line, Circle } from "./type";
 import isPointInCircle from "./point_circle";
 import isPointOnLine from "./point_line";
 import { magnitude, normalize, add, mul, dot, sub } from "./utils";
