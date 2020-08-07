@@ -2,8 +2,8 @@
  * Test if point hit the line segment
  */
 
-import { Line } from "./type";
-import { mag, Vec2 } from "../lib/vec2";
+import { Line } from "../type";
+import { mag, Vec2 } from "../../lib/vec2";
 
 export default function hitTest([px, py]: Vec2, o2: Line) {
   const [x1, y1] = o2.start;

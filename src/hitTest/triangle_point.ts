@@ -1,6 +1,6 @@
-import { Vec2 } from "../lib/vec2";
-import { triangleArea, sum } from "./utils";
-import { Triangle } from "./type";
+import { Vec2 } from "../../lib/vec2";
+import { triangleArea, sum } from "../utils";
+import { Triangle } from "../type";
 
 export default function hitTest({ path }: Triangle, p: Vec2) {
   const [t1, t2, t3] = path;

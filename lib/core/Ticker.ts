@@ -16,11 +16,18 @@ export default function Ticker() {
   const getDelta = Delta(performance.now());
   update(getDelta(performance.now()));
 
+  let destroy = false;
+
   return {
     add: (func: UpdateFn) => updateFns.push(func),
+    destroy: () => (destroy = true),
   };
 
   function update(delta: number) {
+    if (destroy) {
+      return;
+    }
+
     updateFns.forEach((fn) => fn(delta));
 
     requestAnimationFrame((now) => update(getDelta(now)));

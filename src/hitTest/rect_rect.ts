@@ -5,8 +5,8 @@
  * 4. Is the TOP edge of o1 ABOVE the BOTTOM edge of o2?
  */
 
-import { Rect } from "./type";
-import { points } from "./utils";
+import { Rect } from "../type";
+import { points } from "../utils";
 
 export default function hitTest(o1: Rect, o2: Rect) {
   const [a1, a2, a3, a4] = points(o1);

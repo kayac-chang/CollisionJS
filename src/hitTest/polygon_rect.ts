@@ -1,5 +1,5 @@
-import { forEachPath } from "./utils";
-import { Polygon, Rect } from "./type";
+import { forEachPath } from "../utils";
+import { Polygon, Rect } from "../type";
 import hitLine from "./line_rect";
 import inside from "./polygon_point";
 

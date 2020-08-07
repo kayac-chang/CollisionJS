@@ -1,6 +1,6 @@
-import { Vec2 } from "../lib/vec2";
-import { forEachPath } from "./utils";
-import { Polygon } from "./type";
+import { Vec2 } from "../../lib/vec2";
+import { forEachPath } from "../utils";
+import { Polygon } from "../type";
 
 export default function hitTest({ path }: Polygon, [px, py]: Vec2) {
   let hit = false;

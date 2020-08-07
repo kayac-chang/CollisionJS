@@ -1,7 +1,7 @@
-import { Line, Circle } from "./type";
+import { Line, Circle } from "../type";
 import isPointInCircle from "./point_circle";
 import isPointOnLine from "./point_line";
-import { mag, normalize, add, mul, dot, sub } from "../lib/vec2";
+import { mag, normalize, add, mul, dot, sub } from "../../lib/vec2";
 
 export default function hitTest(o1: Line, o2: Circle) {
   if ([o1.start, o1.end].some((point) => isPointInCircle(point, o2))) {

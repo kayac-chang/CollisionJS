@@ -1,8 +1,19 @@
 import { Vec2 } from "../lib/vec2";
 
+export interface RigidBody {
+  position: Vec2;
+  velocity: Vec2;
+  acceleration: Vec2;
+  mass: number;
+}
+
 export interface Circle {
   position: Vec2;
   radius: number;
+}
+
+export function isCircle(obj: any): obj is Circle {
+  return obj.type && obj.type === "circle";
 }
 
 export interface Rect {

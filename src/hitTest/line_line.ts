@@ -1,6 +1,6 @@
-import { Line } from "./type";
-import { inRange } from "./utils";
-import { sub, det } from "../lib/vec2";
+import { Line } from "../type";
+import { inRange } from "../utils";
+import { sub, det } from "../../lib/vec2";
 
 export default function hitTest(o1: Line, o2: Line) {
   const l1 = sub(o1.start, o1.end);
