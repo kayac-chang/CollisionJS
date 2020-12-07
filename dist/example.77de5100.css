@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  background: black;
+}
+
+canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+}
+
+/*# sourceMappingURL=/example.77de5100.css.map */

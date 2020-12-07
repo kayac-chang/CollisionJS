@@ -1,7 +1,9 @@
 {
-  "name": "collision",
+  "name": "@kayac/collision",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "using javascript implement hit-test functions",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
@@ -9,6 +11,7 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "start": "parcel example/index.html"
+    "start": "parcel example/index.html",
+    "build": "tsc"
   }
 }

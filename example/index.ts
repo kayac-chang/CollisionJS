@@ -1,6 +1,6 @@
 import "./index.scss";
 import { Game, IElement, Context, ICircle } from "../lib/core";
-import { hitTest, RigidBody, isCircle, elastic_collision } from "../src";
+import { hitTest, RigidBody, isCircle, elastic_collision } from "../dist";
 
 function updatePosition(delta: number, body: RigidBody) {
   const [x, y] = body.position;
@@ -14,8 +14,8 @@ function collision(o1: RigidBody, o2: RigidBody) {
     hit = hitTest.circle_circle(o1, o2);
   }
 
-  o1.style = hit ? "#ff8080" : "#0099b0";
-  o2.style = hit ? "#ff8080" : "#0099b0";
+  o1["style"] = hit ? "#ff8080" : "#0099b0";
+  o2["style"] = hit ? "#ff8080" : "#0099b0";
 
   if (!hit) {
     return;

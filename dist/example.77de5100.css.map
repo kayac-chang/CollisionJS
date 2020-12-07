@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EAEA;EACA","file":"example.77de5100.css","sourceRoot":"../example","sourcesContent":["body {\n  margin: 0;\n  background: black;\n}\n\ncanvas {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n\n  width: 800px;\n  height: 600px;\n}\n"]}

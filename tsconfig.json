@@ -2,14 +2,12 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./dist",
-    "target": "ES6",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "skipLibCheck": true,
+    "target": "ES2015",
     "strict": true,
     "module": "esnext",
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "./dist"
   },
-  "include": ["src/**/*", "example/**/*", "lib/**/*"]
+  "include": ["src/**/*", "lib/**/*"]
 }

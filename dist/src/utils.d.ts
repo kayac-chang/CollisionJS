@@ -1,0 +1,10 @@
+import { Rect } from "./type";
+import { Vec2 } from "../lib/vec2";
+export declare function inRange([x, y]: Vec2): (num: number) => boolean;
+export declare function points({ position, size }: Rect): number[];
+export declare function sum(nums: number[]): number;
+export declare function clamp([x, y]: Vec2, num: number): number;
+export declare function triangleArea([t1, t2, t3]: [Vec2, Vec2, Vec2]): number;
+declare type ForEachFunc = (cur: Vec2, next: Vec2) => void;
+export declare function forEachPath(path: Vec2[], func: ForEachFunc): void;
+export {};
